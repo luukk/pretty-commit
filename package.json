@@ -1,7 +1,10 @@
 {
   "name": "pretty-commit",
   "version": "0.0.0-development",
-  "description": "prettier staged files",
+  "description": "prettier staged files by config",
+  "repository": "luukk/pretty-commit",
+  "author": "luukk",
+  "license": "ISC",
   "main": "/dist",
   "scripts": {
     "compile": "babel --source-maps -d lib/ src/",
@@ -17,8 +20,6 @@
     "pretty-commit",
     "git"
   ],
-  "author": "luukk",
-  "license": "ISC",
   "dependencies": {
     "bunyan": "^1.8.12",
     "prettier": "^1.13.4",
