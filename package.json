@@ -1,6 +1,6 @@
 {
   "name": "pretty-commit",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "description": "prettier staged files by config",
   "repository": "luukk/pretty-commit",
   "author": "luukk",
