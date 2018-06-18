@@ -6,11 +6,11 @@ const { readdirSync, readFileSync, writeFileSync, lstatSync } = require("fs");
 const { exec } = require("child_process");
 const path = require("path");
 const prettier = require("prettier");
-const utils = require("./logger");
+const chalk = require('chalk');
 const config = require(`${process.env.PWD}/.prettierrc`);
 const sgf = require("staged-git-files");
 
-utils.$log.warn("running precommit hook...");
+console.log(chalk.yellow("running precommit hook..."));
 
 sgf(function(err, results) {
     if (err) return err;
@@ -21,7 +21,7 @@ sgf(function(err, results) {
         return formatFiles(config[key], stagedFiles)
             .filter(Boolean)
             .map(stagedFiles => {
-                utils.$log.info(stagedFiles);
+                console.log(`formatted ${chalk.bold(stagedFiles)}`);
                 return stagedFiles;
             })
             .map(file => exec(`git add ${file}`));
