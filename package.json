@@ -5,10 +5,13 @@
   "repository": "luukk/pretty-commit",
   "author": "luukk",
   "license": "ISC",
-  "main": "/dist",
+  "main": "/lib",
+  "bin": {
+    "pretty-commit": "lib/index.js"
+  },
   "scripts": {
-    "compile": "babel --source-maps -d lib/ src/",
-    "prepublish": "npm run compile",
+    "prepare": "babel --source-maps -d lib/ src/",
+    "prepublishOnly": "npm run prepare",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 "use strict";
 
 const { readdirSync, readFileSync, writeFileSync, lstatSync } = require("fs");
@@ -5,7 +7,7 @@ const { exec } = require("child_process");
 const path = require("path");
 const prettier = require("prettier");
 const utils = require("./logger");
-const config = require("../.prettierrc");
+const config = require(`${process.env.PWD}/.prettierrc`);
 const sgf = require("staged-git-files");
 
 utils.$log.warn("running precommit hook...");
